@@ -1,0 +1,3 @@
+- name: install nano 
+  sudo: yes
+  apt: name=nano state=present
