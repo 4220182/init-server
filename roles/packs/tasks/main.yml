@@ -1,3 +1,14 @@
+- name: install ntpdate 
+  sudo: yes
+  apt: name=ntpdate state=present
+
+- name: install nload 
+  sudo: yes
+  apt: name=nano state=present
 - name: install nano 
   sudo: yes
   apt: name=nano state=present
+
+- name: install nload 
+  sudo: yes
+  apt: name=nload state=present

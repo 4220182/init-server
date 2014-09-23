@@ -1,0 +1,3 @@
+- name: sync system times
+  sudo: yes 
+  cron: name="sync_times" minute="*/2" user="root" job="ntpdate time.nist.gov" cron_file=sync_times
