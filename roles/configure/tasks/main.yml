@@ -1,0 +1,9 @@
+- name: config hosts ->replace 127.0.1.1 hostname
+  sudo: yes 
+  lineinfile: dest=/etc/hosts regexp='^127.0.1.1' line='127.0.1.1 localhost' owner=root group=root mode=0644
+
+- name: config hosts ->set default host ip
+  sudo: yes 
+  lineinfile: dest=/etc/hosts regexp='^{{ ansible_default_ipv4.address }}' line='{{ ansible_default_ipv4.address }} {{ ansible_hostname }}' owner=root group=root mode=0644
+
+
