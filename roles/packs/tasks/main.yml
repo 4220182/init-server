@@ -12,3 +12,7 @@
 - name: install nload 
   sudo: yes
   apt: name=nload state=present
+
+- name: install iftop 
+  sudo: yes
+  apt: name=iftop state=present

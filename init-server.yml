@@ -3,4 +3,5 @@
   hosts: game-sdh
   roles:
     - { role: packs }
+    - { role: configure }
     - { role: crontabs }
