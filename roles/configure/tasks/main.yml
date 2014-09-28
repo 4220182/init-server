@@ -6,4 +6,12 @@
   sudo: yes 
   lineinfile: dest=/etc/hosts regexp='^{{ ansible_default_ipv4.address }}' line='{{ ansible_default_ipv4.address }} {{ ansible_hostname }}' owner=root group=root mode=0644
 
-
+- name: ensure iptables allows established and related traffic
+  sudo: yes
+  lineinfile:
+    dest=/etc/iptables.rules
+    state=present 
+    regexp="^.*INPUT.*ESTABLISHED,RELATED.*ACCEPT" 
+    insertafter="^:OUTPUT " line="-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT" 
+    backup=yes
+  
