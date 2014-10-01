@@ -7,3 +7,10 @@
   lineinfile: dest=/etc/hosts regexp='^{{ ansible_default_ipv4.address }}' line='{{ ansible_default_ipv4.address }} {{ ansible_hostname }}' owner=root group=root mode=0644
 
 
+- name: set open files soft
+  sudo: yes 
+  lineinfile: dest=/etc/security/limits.conf regexp='^\s*\*\s+soft\s+nofile' line='* soft nofile 65535' owner=root group=root mode=0644
+
+- name: set open files hard
+  sudo: yes 
+  lineinfile: dest=/etc/security/limits.conf regexp='^\s*\*\s+hard\s+nofile' line='* hard nofile 65535' owner=root group=root mode=0644
