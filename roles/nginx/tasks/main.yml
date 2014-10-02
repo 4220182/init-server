@@ -1,5 +1,5 @@
 - name: write the nginx config file
   sudo: yes 
-  template: src=test.conf dest=/etc/nginx/test.conf
+  template: src=test.j2 dest=/etc/nginx/test.conf
 
 
