@@ -1,6 +1,6 @@
 ---
 - name: init server
-  hosts: game-sdh
+  hosts: all
   roles:
     - { role: packs }
     - { role: configure }
