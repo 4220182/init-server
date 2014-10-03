@@ -2,8 +2,8 @@
 - name: init server
   hosts: game-sdh
   roles:
-    #- { role: packs }
-    #- { role: configure }
-    #- { role: crontabs }
+    - { role: packs }
+    - { role: configure }
+    - { role: crontabs }
     - { role: nginx }
 
